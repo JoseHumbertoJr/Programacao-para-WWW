@@ -18,7 +18,7 @@ public class Main {
 	        while (true) {
 	
 	            Socket cliente = servidor.accept();
-	            System.out.println("Nova conex„o com o cliente " +cliente.getInetAddress().getHostAddress());
+	            System.out.println("Nova conex√£o com o cliente " +cliente.getInetAddress().getHostAddress());
 	            BufferedReader entrada = new BufferedReader(new InputStreamReader(cliente.getInputStream()));
 	            BufferedWriter saida = new BufferedWriter(new OutputStreamWriter(cliente.getOutputStream()));
 	
@@ -46,6 +46,7 @@ public class Main {
 	            servidor.close();
 	        }
     	}
+	    
     	catch(Exception e) {
     		System.out.println("Erro: " + e.getMessage());
     	}
