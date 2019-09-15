@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<title>Exercicio</title>
+	</head>
+	<body>
+		<h1>
+			Tags HTML
+		</h1>
+		<h2>
+			Formatação
+		</h2>
+		<h3>
+			Título
+		</h3>
+		<p>
+			As tags &lt;hx&gt; são utilizadas para definir títulos em níveis (no máximo 6)	
+		</p>
+		<h3>
+			Parágrafos
+		</h3>
+		<p>
+			Representados pela tag &lt;p&gt;
+		</p>
+		<h3>
+			Quebras de linha
+		</h3>
+		<p>
+			Indicadas pela (quebrar a linha aqui)<br>
+			tag &lt;br&gt;
+		</p>
+		<h3>
+			Comentários 			
+		</h3>
+		<p>
+			Delimitados pelas tags &lt;!-- e --&gt;
+		</p>
+		<h3>
+			Espaços em branco
+		</h3>
+		<p>
+			Utiliza-se a entidade (4 espaços a seguir)&nbsp;&nbsp;&nbsp;&nbsp;&amp;nbsp;
+		</p>
+		<h3>
+			Negrito
+		</h3>
+		<p>
+			Utiliza-se a tag &lt;strong&gt; para deixar
+			<strong>
+				negrito	
+			</strong> 
+		</p>
+		<h3>
+			Itálico
+		</h3>
+		<p>
+			para deixar o texto em 
+			<em>
+				itálio
+			</em>
+			utiliza-se a tag &lt;em&gt;
+		</p>
+		<h3>
+			Sublinhado
+		</h3>
+		<p>
+			Para que o texto fique
+			<u>
+				sublinhado	
+			</u>
+			,utiliza-se a tag &lt;u&gt;
+		</p>
+		<h3>
+			Texto pré formatado
+		</h3>
+		<p>
+			Utiliza-se a tag &lt;pre&gt; quando o espaço ocupado
+			por cada letra deve ser o mesmo. Ex:
+			<pre>
+			int main(string [] args)
+			{	count << "olá mundo";
+				
+			}
+			</pre>
+		</p>
+		<h2>
+			Links
+		</h2>
+		<h3>
+			Alvo
+		</h3>
+		<p>
+			Define
+			<a target="_blank" href="https://www.google.com.br/?gws_rd=ssl">hyperlink</a>
+			para outra página<br>
+			Podendo <a target="_blank" href="https://www.facebook.com">Abrir em outra aba</a>
+		</p>
+		<h3 id="ancora">
+			Âncora
+		</h3>
+		<p>
+			Link que define destino dentro de página.
+			Deve existir um link no final da página que
+			redireciona para este ponto.
+		</p>
+		<h2>
+			Tabelas
+		</h2>
+		<p>
+			Tag que permite apresentação de forma tabular em conjunto com outras
+		</p>
+		<table border="tabela">
+			<tr>
+				<th>Tag</th>
+				<th>Função</th>
+			</tr>
+			<tr>
+				<td>&lt;table&gt;
+				<td>Define uma tabela</td>
+			</tr>
+			<tr>
+				<td>&lt;tr&gt;</td>
+				<td>Inicia uma linha</td>
+			</tr>
+			<tr>
+				<td>&lt;th&gt;</td>
+				<td>Define rótulo da linha ou coluna</td>
+			</tr>
+			<tr>
+				<td>&lt;td&gt;</td>
+				<td>Indica uma célula de dados</td>
+			</tr>
+			<tr>
+		</table>
+		<h2>
+			Listas
+		</h2>
+		<h3>
+			Não ordenadas
+		</h3>
+		<p>
+			Define lista não ordenada com as tags:
+		</p>
+		<ul>
+			<li>
+				&lt;ul&gt;;: lista não numerada
+			</li>
+			<li>
+				&lt;li&gt;: item da lista
+			</li>
+		</ul>
+		<h3>
+			Ordenadas
+		</h3>
+		<ol type="a">
+			<li>
+				&lt;ol&gt;: lista numerada
+			</li>
+			<li>
+				&lt;li&gt;: item da lista
+			</li>
+		</ol>
+		<h2>
+			Formulários
+		</h2>
+		<p>
+			Permitem que usuário preencham campos com dados a serem processados
+		</p>
+		<form class="table">
+			Texto:<input type="text" name="texto">
+			<br>
+			Senha:<input type="password" name="senha">
+			<br>
+			Escolha A <input type="checkbox" name="A">
+			e escolha B<input type="checkbox" name="B">
+			<br>
+			Escolha X<input type="radio" name="radio" value="X">
+			ou escolha Y<input type="radio" name="radio" value="Y">
+			(só pode escolher um)
+			<br>
+			Texto:<textarea rows="9" cols="30">texto...
+			</textarea>
+			<br>
+			Escolha uma opção <select>
+				<option value="node">Node</option>
+				<option value="js">Js</option>
+				<option value="html">HTML</option>
+				<option value="css">Css</option>
+			</select>
+			<br>
+			<button>Enviar</button>
+			<button>Redefinir</button>
+		</form>
+		<h2>
+			Imagens
+		</h2>
+		<p>Utiliza a tag &lt;img&gt;</p>
+		<img src="https://www.penaestrada.blog.br/wp-content/uploads/2015/10/pedra-do-inga-capa.jpg">
+		<br>
+		<h3>
+			Div
+		</h3>
+		<p>
+			Permite criar uma área, normalmente horizontal, para aplicação de estilos.
+		</p>
+		<div style="border:solid;">
+			Como esta aqui
+		</div>
+		<h3>
+			Span
+		</h3>
+		<p>
+			Permite selecionar um trecho de uma linha
+			para aplicação de estilos.
+			Como este
+			<span style="border:solid;">
+				trecho aqui
+			</span>
+		</p>
+		<br>
+		<a href="#ancora">
+			Este link deve me levar para a seção Links Âncora
+		</a>
+	</body>
+</html>
