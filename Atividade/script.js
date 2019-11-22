@@ -107,7 +107,6 @@ function redimencionar() {
 
     document.querySelector('#redimenciona').innerHTML = `largura: ${windowWidth} X Altura: ${windowHeight}`;
 }
-redimencionar();
 
 window.addEventListener('resize', function() {
     redimencionar();
