@@ -1,5 +1,9 @@
 var divSequencial = 1;
 var divIncremental = 1;
+const COR_VERDE = '#66DD66';
+const VERDE_LIMAO = '#7cfc00';
+const COR_VERMELHA = '#E61919';
+const COR_AZUL = '#5190c6';
 
 function mudarEstado(el) {
     var display = document.getElementById(el).style.display;
@@ -73,4 +77,120 @@ function zoomOut() {
 }
 function trocarCorVermelho(id){
     document.getElementById(id).style.color="#e80d0d";
+}
+function alterarCorCampo() {
+    let campo = document.getElementById('ValidaCampoVazio');
+    if (!campo.value) {
+        campo.style.backgroundColor = COR_VERMELHA;
+    } else {
+        campo.style.backgroundColor = null;
+    }
+}
+function alterarCor() {
+    let div = document.getElementById('modificaCor');
+    div.style.backgroundColor = VERDE_LIMAO;
+}
+function selecionarCor() {
+    let opcao = document.getElementById('selecionaOpcao').value;
+    if (opcao === 'vermelho') {
+        document.getElementById(
+            'selecionarCor').style.color = COR_VERMELHA;
+    } else if (opcao === 'verde') {
+        document.getElementById('selecionarCor').style.color = COR_VERDE;
+    } else if (opcao === 'azul') {
+        document.getElementById('selecionarCor').style.color = COR_AZUL;
+    }
+}
+function redimencionar() {
+    var windowWidth = window.innerWidth;
+    var windowHeight = window.innerHeight;
+
+    document.querySelector('#redimenciona').innerHTML = `largura: ${windowWidth} X Altura: ${windowHeight}`;
+}
+redimencionar();
+
+window.addEventListener('resize', function() {
+    redimencionar();
+});
+function validarForm() {
+    let form = document.getElementById('formulario').elements;
+    let nomeValidado = this.validarNome(form);
+    let radioValidado = this.validarRadio(form);
+    let checkValidado = this.validarCheckbox(form);
+    if (nomeValidado && radioValidado && checkValidado) {
+        document.getElementById('formulario').submit();
+    }
+}
+function validarNome(form) {
+    let validaCampo = document.getElementById('validaNome');
+    let validado = false;
+    if (!form.campoNome.value) {
+        validaCampo.innerHTML = 'Preencha o campo !';
+        validaCampo.style.color = COR_VERMELHA;
+    } else {
+        validaCampo.innerHTML = null;
+        validado = true;
+    }
+    return validado;
+}
+
+function validarRadio(form) {
+    let validaRadio = document.getElementById('validaRadio');
+    let validado = false;
+    if (!form.ling_prog.value) {
+        validaRadio.innerHTML = 'Selecione uma opção !';
+        validaRadio.style.color = COR_VERMELHA;
+    } else {
+        validaRadio.innerHTML = null;
+        validado = true;
+    }
+    return validado;
+}
+
+function validarCheckbox(form) {
+    let validaCheck = document.getElementById('validaCheckbox');
+    let validado = false;
+    if (!form.check.checked) {
+        validaCheck.innerHTML = 'Seleciona a opção !';
+        validaCheck.style.color = COR_VERMELHA;
+    } else {
+        validaCheck.innerHTML = null;
+        validado = true;
+    }
+    return validado;
+}
+function validarCaractere() {
+    let campo = document.getElementById('validaCaractere').value;
+    let cont = 0;
+    for (var i = 0; i < campo.length; i++) {
+        if (campo[i] === '@') {
+            cont++;
+        }
+    }
+    let novaDiv = document.createElement('div');
+    novaDiv.setAttribute('id', 'campoValidacao');
+    if (cont === 1) {
+        let texto = document.createTextNode('ERRO');
+        novaDiv.appendChild(texto);
+        novaDiv.style.color = COR_VERMELHA;
+        validarCampoPreenchido(novaDiv);
+    } else if (!campo) {
+        let texto = document.createTextNode('CAMPO VAZIO');
+        novaDiv.appendChild(texto);
+        novaDiv.style.color = COR_VERMELHA;
+        validarCampoPreenchido(novaDiv);
+    } else {
+        let texto = document.createTextNode('SUCESSO');
+        novaDiv.appendChild(texto);
+        novaDiv.style.color = COR_VERDE;
+        validarCampoPreenchido(novaDiv);
+    }
+}
+function validarCampoPreenchido(novaDiv) {
+    if (!document.getElementById('campoValidacao')) {
+        document.getElementById('caractereEspecial').appendChild(novaDiv);
+    } else {
+        let campoAtual = document.getElementById('campoValidacao');
+        campoAtual.replaceChild(novaDiv, campoAtual.childNodes[0]);
+    }
 }
